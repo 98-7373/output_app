@@ -40,7 +40,7 @@ class MyHomePage extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: model.increment,
+          onPressed: model.countText,
           tooltip: 'Increment',
            child: Icon(Icons.add),
         ),
@@ -53,10 +53,12 @@ class MyHomePage extends StatelessWidget {
 class CountText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final su = Provider.of<MainModel>(context, listen: false);
     return Text(
-      '${Provider.of<MainModel>(context).counter}',
-      style: Theme.of(context).textTheme.headline4,
+      su.suzuki,
     );
   }
 }
+
+
 
